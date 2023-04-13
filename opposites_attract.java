@@ -10,7 +10,7 @@ flower and return true if they are in love and false if they aren't.
 
 public class opposites_attract {
     public static void main(String[] args) {
-        // Test
+        //
         System.out.println(isLove(1, 4));
     }
 
