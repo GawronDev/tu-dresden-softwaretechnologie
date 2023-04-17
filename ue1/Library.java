@@ -26,8 +26,12 @@ public class Library {
     public Book loan(String title) {
         Book to_lent = search(title);
         if (to_lent != null){
-            to_lent.setIsLent();
-            return to_lent;
+            if(to_lent.getIsLent()){
+                return null;
+            } else {
+                to_lent.setIsLent();
+                return to_lent;
+            }
         } else return null;
     }
 }
