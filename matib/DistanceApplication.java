@@ -22,6 +22,5 @@ public class DistanceApplication {
         double distance = GeoUtil.getDistance(p1, p2);
 
         System.out.println(distance);
-
     }
 }

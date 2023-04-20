@@ -1,12 +1,10 @@
-public class Adel extends Einwohner{
-    
-    @Override
-    public int steuer(){
-        int result = super.steuer();
-        if(result < 20) {
-            result = 20;
+public class Adel extends Einwohner {
+    public int steuer() {
+        // Vorschrift (4)
+        int betrag = super.steuer();
+        if (betrag < 20) {
+            return 20;
         }
-        return result;
+        return betrag;
     }
-
 }
