@@ -19,13 +19,33 @@ import java.util.ArrayList;
 
 public class duplicate_encoder {
     public static void main(String[] args) {
-
+        System.out.println(encode("recede"));
     }
 
     static String encode(String word) {
+        word = word.toLowerCase();
         int len = word.length();
         ArrayList<String> characters = new ArrayList<String>();
+        ArrayList<String> appear_more = new ArrayList<String>();
 
-        return word;
+        // Checking what characters appear more than once
+        for(int i = 0; i < len; i++){
+            if(characters.contains(String.valueOf(word.charAt(i))) == false){
+                characters.add(String.valueOf(word.charAt(i)));
+            } else {
+                appear_more.add(String.valueOf(word.charAt(i)));
+            }
+        }
+
+        // Encoding part
+        String encoded = "";
+        for(int i = 0; i < len; i++){
+            if(appear_more.contains(String.valueOf(word.charAt(i)))){
+                encoded = encoded + ")";
+            } else {
+                encoded = encoded + "(";
+            }
+        }
+        return encoded;
     }
 }
