@@ -1,3 +1,6 @@
+package koenigreich;
+
+
 public class Leibeigener extends Bauer {
     public int zuVersteuerndesEinkommen() {
         // Vorschrift (5)

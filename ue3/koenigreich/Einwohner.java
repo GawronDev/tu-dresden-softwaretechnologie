@@ -1,3 +1,6 @@
+package koenigreich;
+
+
 public class Einwohner {
     protected int einkommen;
 
@@ -16,6 +19,10 @@ public class Einwohner {
     }
 
     public void setEinkommen(int einkommen) {
+        // Neue Anforderung seit U02: negative Einkommen verbieten
+        if (einkommen < 0) {
+            throw new IllegalArgumentException("Einkommen darf nicht negativ sein");
+        }
         this.einkommen = einkommen;
     }
 }

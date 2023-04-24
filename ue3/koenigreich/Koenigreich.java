@@ -1,3 +1,5 @@
+package koenigreich;
+
 public class Koenigreich {
     public static void main(String[] args) {
         steuerbescheid(new Koenig(), 20);

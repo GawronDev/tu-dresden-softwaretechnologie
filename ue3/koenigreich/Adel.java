@@ -1,3 +1,5 @@
+package koenigreich;
+
 public class Adel extends Einwohner {
     public int steuer() {
         // Vorschrift (4)
