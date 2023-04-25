@@ -7,10 +7,12 @@ public class BoundingBox {
 
 
     public BoundingBox(ArrayList<Point> points) {
+        // Constructor 
         createBoundingBox(points);
     }
 
     private void createBoundingBox(ArrayList<Point> points){
+        // Creates two edge points that span a bounding box 
         double minX = points.get(0).getX();
         double maxX = points.get(0).getX();
         
@@ -34,20 +36,27 @@ public class BoundingBox {
             }
         }
 
-        System.out.println(maxX);
-        System.out.println(minX);
-        System.out.println(maxY);
-        System.out.println(minY);
-
         this.smallestPoint = new Point(minX, minY);
         this.largestPoint = new Point(maxX, maxY);
     }
 
     public Point getMaxPoint(){
+        // Returns max point
         return this.largestPoint;
     }
 
     public Point getMinPoint(){
+        // Return min point
         return this.smallestPoint;
+    }
+
+    public double getWidth(){
+        // Returns the width of the bounding box
+        return GeoUtil.getDistance(this.smallestPoint, new Point(this.largestPoint.getX(), this.smallestPoint.getY()));
+    }
+
+    public double getHeight(){
+        // Returns the height of the bounding box
+        return GeoUtil.getDistance(this.smallestPoint, new Point(this.smallestPoint.getX(), this.largestPoint.getY()));
     }
 }

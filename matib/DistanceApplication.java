@@ -12,7 +12,8 @@ public class DistanceApplication {
         Point p2 = new Point(5, 4);
         Point p3 = new Point(1, 2);
         Point p4 = new Point(10, 3);
-        
+
+        // Define the points array
         ArrayList<Point> points = new ArrayList<Point>();
         points.add(0, p1);
         points.add(1, p2);
@@ -21,16 +22,19 @@ public class DistanceApplication {
         
         BoundingBox boundingBox = new BoundingBox(points);
 
-        // // First point
-        // System.out.println("Point 1 X: " + Double.toString(p1.getX())); 
-        // System.out.println("Point 1 Y: " + Double.toString(p1.getY())); 
+        System.out.println(boundingBox.getWidth());
+        System.out.println(boundingBox.getHeight());
 
-        // // Second point
-        // System.out.println("Point 2 X: " + Double.toString(p2.getX())); 
-        // System.out.println("Point 2 Y: " + Double.toString(p2.getY())); 
+        // First point
+        System.out.println("Point 1 X: " + Double.toString(p1.getX())); 
+        System.out.println("Point 1 Y: " + Double.toString(p1.getY())); 
+
+        // Second point
+        System.out.println("Point 2 X: " + Double.toString(p2.getX())); 
+        System.out.println("Point 2 Y: " + Double.toString(p2.getY())); 
 
         // Calculate distance
-        // double distance = GeoUtil.getDistance(p1, p2);
+        double distance = GeoUtil.getDistance(p1, p2);
 
     }
 }
