@@ -5,7 +5,7 @@ import java.lang.Math;
 
 public class GeoUtil {
     // Two points as parameters
-    public static double getDistance(Point p1, Point p2) {
+    public static double getDistance(GeoPoint p1, GeoPoint p2) {
         double distance = 0;
 
         // Calculation of the distance based on the equation to calculate the distance between two points on a plain

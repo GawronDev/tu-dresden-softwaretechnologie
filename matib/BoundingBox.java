@@ -2,16 +2,16 @@ package matib;
 import java.util.ArrayList;
 
 public class BoundingBox {
-    public Point smallestPoint = new Point(0, 0);
-    public Point largestPoint = new Point(0, 0);
+    public GeoPoint smallestPoint = new GeoPoint(0, 0);
+    public GeoPoint largestPoint = new GeoPoint(0, 0);
 
 
-    public BoundingBox(ArrayList<Point> points) {
+    public BoundingBox(ArrayList<GeoPoint> points) {
         // Constructor 
         createBoundingBox(points);
     }
 
-    private void createBoundingBox(ArrayList<Point> points){
+    private void createBoundingBox(ArrayList<GeoPoint> points){
         // Creates two edge points that span a bounding box 
         double minX = points.get(0).getX();
         double maxX = points.get(0).getX();
@@ -36,27 +36,27 @@ public class BoundingBox {
             }
         }
 
-        this.smallestPoint = new Point(minX, minY);
-        this.largestPoint = new Point(maxX, maxY);
+        this.smallestPoint = new GeoPoint(minX, minY);
+        this.largestPoint = new GeoPoint(maxX, maxY);
     }
 
-    public Point getMaxPoint(){
+    public GeoPoint getMaxPoint(){
         // Returns max point
         return this.largestPoint;
     }
 
-    public Point getMinPoint(){
+    public GeoPoint getMinPoint(){
         // Return min point
         return this.smallestPoint;
     }
 
     public double getWidth(){
         // Returns the width of the bounding box
-        return GeoUtil.getDistance(this.smallestPoint, new Point(this.largestPoint.getX(), this.smallestPoint.getY()));
+        return GeoUtil.getDistance(this.smallestPoint, new GeoPoint(this.largestPoint.getX(), this.smallestPoint.getY()));
     }
 
     public double getHeight(){
         // Returns the height of the bounding box
-        return GeoUtil.getDistance(this.smallestPoint, new Point(this.smallestPoint.getX(), this.largestPoint.getY()));
+        return GeoUtil.getDistance(this.smallestPoint, new GeoPoint(this.smallestPoint.getX(), this.largestPoint.getY()));
     }
 }

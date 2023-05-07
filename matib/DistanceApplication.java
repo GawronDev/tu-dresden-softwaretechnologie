@@ -1,5 +1,4 @@
 package matib;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DistanceApplication {
@@ -8,13 +7,13 @@ public class DistanceApplication {
         // Initiate the utility module
         GeoUtil geoUtil = new GeoUtil();
         // Initialize the points and pass the arguments
-        Point p1 = new Point(1, 1);
-        Point p2 = new Point(5, 4);
-        Point p3 = new Point(1, 2);
-        Point p4 = new Point(10, 3);
+        GeoPoint p1 = new GeoPoint(1, 1);
+        GeoPoint p2 = new GeoPoint(5, 4);
+        GeoPoint p3 = new GeoPoint(1, 2);
+        GeoPoint p4 = new GeoPoint(10, 3);
 
         // Define the points array
-        ArrayList<Point> points = new ArrayList<Point>();
+        ArrayList<GeoPoint> points = new ArrayList<GeoPoint>();
         points.add(0, p1);
         points.add(1, p2);
         points.add(2, p3);
