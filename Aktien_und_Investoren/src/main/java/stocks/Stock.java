@@ -28,11 +28,15 @@ public class Stock {
     }
 
     public void setPrice(double newPrice) {
-        // TODO
+        if(newPrice < 0.0) throw new IllegalArgumentException("Price has to be greater the 0");
+        if(newPrice < this.price) notifyWatchers();
+        this.price = newPrice;
     }
 
     private void notifyWatchers() {
-        // TODO
+        for(StockChangeWatcher watcher : watchers){
+            watcher.priceUpdated(this);
+        }
     }
 
     public boolean addWatcher(StockChangeWatcher watcher) {

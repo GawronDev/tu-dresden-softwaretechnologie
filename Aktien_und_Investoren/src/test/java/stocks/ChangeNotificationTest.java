@@ -21,5 +21,4 @@ class ChangeNotificationTest {
         stock.addWatcher(investor);
     }
 
-    // TODO
 }
