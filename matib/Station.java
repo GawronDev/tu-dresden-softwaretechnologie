@@ -16,10 +16,7 @@ public class Station {
         return this.value;
     }
 
-
+    public GeoPoint getLocation(){
+        return location;
+    }
 }
-
-/*
-Station station1 = new Station("Mateusz");
-station1.getFirstLetterOfTheName();
- */
